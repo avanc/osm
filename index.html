@@ -1,1 +1,103 @@
-Hello World!
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Dorferlebnispfad Dollbergen</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="jumbotron">
+
+        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T00'); return false">Tafel 0</button> 
+        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T01'); return false">Tafel 1</button> 
+        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T02'); return false">Tafel 2</button> 
+        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T03'); return false">Tafel 3</button> 
+        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T04'); return false">Tafel 4</button> 
+        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T05'); return false">Tafel 5</button> 
+        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T06'); return false">Tafel 6</button> 
+        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T07'); return false">Tafel 7</button> 
+        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T08'); return false">Tafel 8</button> 
+        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T09'); return false">Tafel 9</button> 
+        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T10'); return false">Tafel 10</button> 
+        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T10a'); return false">Tafel 10a</button> 
+        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T11'); return false">Tafel 11</button> 
+        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T12'); return false">Tafel 12</button> 
+        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T13'); return false">Tafel 13</button> 
+        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T15'); return false">Tafel 15</button> 
+        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T15a'); return false">Tafel 15a</button> 
+        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T16'); return false">Tafel 16</button> 
+        
+        <div style="width:100%; height: 400px;" id='map'></div>
+
+  
+        <script>
+          var map = L.map('map').setView([52.40842, 10.180], 12);
+
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                  attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          }).addTo(map);
+            
+            
+          map.on('click', function(e) {
+            alert("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng)
+          });
+          var markers = {};
+          markers["T00"] = L.marker([52.40971027985026, 10.181660056114197], {}).bindPopup('<b>Tafel 0</b><br> Weitere Informationen: <a href="http://www.dollbergen.de/dorferlebnispfad/tafel-0/">Link</a>').addTo(map);
+          markers["T01"] = L.marker([52.40839150172891, 10.18064618110657], {}).bindPopup('<b>Tafel 1</b><br> Weitere Informationen: <a href="http://www.dollbergen.de/dorferlebnispfad/tafel-01/">Link</a>').addTo(map);
+          markers["T02"] = L.marker([52.40787117891841, 10.182309150695803], {}).bindPopup('<b>Tafel 2</b><br> Weitere Informationen: <a href="http://www.dollbergen.de/dorferlebnispfad/tafel-02/">Link</a>').addTo(map);
+          markers["T03"] = L.marker([52.40693196434515, 10.18532395362854], {}).bindPopup('<b>Tafel 3</b><br> Weitere Informationen: <a href="http://www.dollbergen.de/dorferlebnispfad/tafel-03/">Link</a>').addTo(map);
+          markers["T04"] = L.marker([52.40653271028129, 10.18634855747223], {}).bindPopup('<b>Tafel 4</b><br> Weitere Informationen: <a href="http://www.dollbergen.de/dorferlebnispfad/tafel-04/">Link</a>').addTo(map);
+          markers["T05"] = L.marker([52.40649343919458, 10.187464356422424], {}).bindPopup('<b>Tafel 5</b><br> Weitere Informationen: <a href="http://www.dollbergen.de/dorferlebnispfad/tafel-05/">Link</a>').addTo(map);
+          markers["T06"] = L.marker([52.40614327045896, 10.187405347824098], {}).bindPopup('<b>Tafel 6</b><br> Weitere Informationen: <a href="http://www.dollbergen.de/dorferlebnispfad/tafel-06/">Link</a>').addTo(map);
+          markers["T07"] = L.marker([52.406994142931524, 10.190817117691042], {}).bindPopup('<b>Tafel 7</b><br> Weitere Informationen: <a href="http://www.dollbergen.de/dorferlebnispfad/tafel-07/">Link</a>').addTo(map);
+          markers["T08"] = L.marker([52.407115227295584, 10.192399621009828], {}).bindPopup('<b>Tafel 8</b><br> Weitere Informationen: <a href="http://www.dollbergen.de/dorferlebnispfad/tafel-08/">Link</a>').addTo(map);
+          markers["T09"] = L.marker([52.403908015741, 10.18586575984955], {}).bindPopup('<b>Tafel 9</b><br> Weitere Informationen: <a href="http://www.dollbergen.de/dorferlebnispfad/tafel-09/">Link</a>').addTo(map);
+          markers["T10"] = L.marker([52.405298926936155, 10.185238122940063], {}).bindPopup('<b>Tafel 10</b><br> Weitere Informationen: <a href="http://www.dollbergen.de/dorferlebnispfad/tafel-10/">Link</a>').addTo(map);
+          markers["T10a"] = L.marker([52.40542001595336, 10.185334682464601], {}).bindPopup('<b>Tafel 10a</b><br> Weitere Informationen: <a href="http://www.dollbergen.de/dorferlebnispfad/tafel-10-a/">Link</a>').addTo(map);
+          markers["T11"] = L.marker([52.40595345820694, 10.185763835906982], {}).bindPopup('<b>Tafel 11</b><br> Weitere Informationen: <a href="http://www.dollbergen.de/dorferlebnispfad/tafel-11/">Link</a>').addTo(map);
+          markers["T12"] = L.marker([52.40512220182802, 10.18237888813019], {}).bindPopup('<b>Tafel 12</b><br> Weitere Informationen: <a href="http://www.dollbergen.de/dorferlebnispfad/tafel-12/">Link</a>').addTo(map);
+          markers["T13"] = L.marker([52.40397019858968, 10.181810259819033], {}).bindPopup('<b>Tafel 13</b><br> Weitere Informationen: <a href="http://www.dollbergen.de/dorferlebnispfad/tafel-13/">Link</a>').addTo(map);
+          //markers["T14"] = L.marker([], {}).bindPopup("<b>Tafel 14</b>").addTo(map);
+          markers["T15"] = L.marker([52.39797405966039, 10.176075696945192], {}).bindPopup('<b>Tafel 15</b><br> Weitere Informationen: <a href="http://www.dollbergen.de/dorferlebnispfad/tafel-15/">Link</a>').addTo(map);
+          markers["T15a"] = L.marker([52.40325345412213, 10.173549056053162], {}).bindPopup('<b>Tafel 15a</b><br> Weitere Informationen: <a href="http://www.dollbergen.de/dorferlebnispfad/streuobstwiese/">Link</a>').addTo(map);
+          markers["T16"] = L.marker([52.40587164232918, 10.181316733360292], {}).bindPopup('<b>Tafel 16</b><br> Weitere Informationen: <a href="http://www.dollbergen.de/dorferlebnispfad/tafel-16/">Link</a>').addTo(map);
+          
+          var group = new L.featureGroup([markers["T01"], markers["T02"], markers["T03"], markers["T04"], markers["T05"], markers["T06"], markers["T07"], markers["T08"], markers["T09"], markers["T10"], markers["T11"], markers["T12"], markers["T13"], markers["T15"], markers["T15a"], markers["T16"]]);
+          map.fitBounds(group.getBounds(), {padding: [20,20]});
+
+          function focusMarker(name) {
+                  map.panTo(markers[name].getLatLng());
+          }
+              
+      </script>
+
+      </div>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </body>
+ 
+</html>
