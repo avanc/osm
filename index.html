@@ -23,31 +23,85 @@
   <body>
 
     <div class="container">
+    
+    <!-- Static navbar -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="index.html">Einführung</a></li>
+              <li><a href="anleitung.html">Anleitung</a></li>
+              <li><a href="hintergrund.html">Hintergrund</a></li>
+              <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+         </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+
+      <!-- Main component for a primary marketing message or call to action -->
+    
+    
       <div class="jumbotron">
-
-        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T00'); return false">Tafel 0</button> 
-        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T01'); return false">Tafel 1</button> 
-        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T02'); return false">Tafel 2</button> 
-        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T03'); return false">Tafel 3</button> 
-        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T04'); return false">Tafel 4</button> 
-        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T05'); return false">Tafel 5</button> 
-        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T06'); return false">Tafel 6</button> 
-        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T07'); return false">Tafel 7</button> 
-        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T08'); return false">Tafel 8</button> 
-        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T09'); return false">Tafel 9</button> 
-        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T10'); return false">Tafel 10</button> 
-        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T10a'); return false">Tafel 10a</button> 
-        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T11'); return false">Tafel 11</button> 
-        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T12'); return false">Tafel 12</button> 
-        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T13'); return false">Tafel 13</button> 
-        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T15'); return false">Tafel 15</button> 
-        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T15a'); return false">Tafel 15a</button> 
-        <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T16'); return false">Tafel 16</button> 
+      
+        <h1>OpenStreetMap für Dollbergen</h1>
         
-        <div style="width:100%; height: 400px;" id='map'></div>
+        <a href="https://openstreetmap.org">OpenStreetMap</a> ist ein Projekt mit dem Ziel, Daten für eine freie Weltkarte zu sammeln. Durch die Zusammenarbeit vieler Freiwilliger entsteht ein detaillierte Karte, welche dem Vergleich mit kommerziellen Produkten stand hält. Wie hochwertig die Ergebnisse einer solchen Zusammenarbeit Vieler sein können, beweist <a href="https://wikipedia.de">Wikipedia</a> als Enzyklopädie seit Jahren. <br>
+        <br>
+        <h2>Warum OpenStreetMap?</h2>
+        
+        <b>Aktuell und Detailreich</b><br>
+        Ein wesentlicher Vorteil bei der Nutzung von OpenStreetMap liegt für Dollbergen in der Aktualität: <b>Wer kennt Dollbergen besser als wir Einwohner?</b><br>
 
-  
-        <script>
+        <figure class="figure" style="max-width: 400px; margin-left: auto; margin-right: auto; margin-bottom: 1em;">
+        <img class="figure-img img-fluid rounded img-thumbnail" src="images/detail_googlemaps.png">
+        <figcaption class="figure-caption text-center">Detail von Google Maps mit falscher Straßenführung.<br>(Stand April 2017)</figcaption>
+        </figure>
+
+        <figure class="figure" style="max-width: 400px; margin-left: auto; margin-right: auto; margin-bottom: 1em;">
+          <img class="img-thumbnail" src="images/detail_openstreetmap.png">
+          <figcaption class="figure-caption text-center"> Detail von OpenStreetMap mit korrekter Straßenführung sowie zusätzlich Fahrrad- und Fußgängerwege.<br>(Stand April 2017)</figcaption>
+        </figure>
+
+        <b>Keine Lizenzkosten</b><br>
+        Ein weiterer Vorteil liegt in der Einsparung von Lizenzkosten. Ein gutes Beispiel sind die zwei Dorftafeln, welche in Dollbergen erneuert werden sollen. Bei einer ersten Anfrage bei kommerziellen Kartenanbietern kam heraus, dass über 700&euro; Lizenzkosten fällig werden. Darin ist der Druck der Karten noch nicht einmal enthalten. Und eine Weiterverwendung für andere Zwecke wäre auch nicht möglich.<br>
+        <br>
+        
+        <b>Neue Anwendungsfälle</b><br>
+        Außerdem eröffnen die freien Kartendaten ganz neue Anwendungsfälle, wie hier die beispielhafte Darstellung des Dorferlebnispfad Dollbergen:
+      
+        <figure class="figure" style="max-width: 600px; margin-left: auto; margin-right: auto; margin-bottom: 1em;">
+          <div style="width:100%; height: 300px;" id='map'></div>
+          <figcaption class="figure-caption text-center">
+            <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T00'); return false">Tafel 0</button> 
+            <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T01'); return false">Tafel 1</button> 
+            <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T02'); return false">Tafel 2</button> 
+            <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T03'); return false">Tafel 3</button> 
+            <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T04'); return false">Tafel 4</button> 
+            <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T05'); return false">Tafel 5</button> 
+            <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T06'); return false">Tafel 6</button> 
+            <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T07'); return false">Tafel 7</button> 
+            <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T08'); return false">Tafel 8</button> 
+            <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T09'); return false">Tafel 9</button> 
+            <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T10'); return false">Tafel 10</button> 
+            <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T10a'); return false">Tafel 10a</button> 
+            <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T11'); return false">Tafel 11</button> 
+            <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T12'); return false">Tafel 12</button> 
+            <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T13'); return false">Tafel 13</button> 
+            <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T15'); return false">Tafel 15</button> 
+            <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T15a'); return false">Tafel 15a</button> 
+            <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T16'); return false">Tafel 16</button> 
+          </figcaption>
+        </figure> 
+
+       <script>
           var map = L.map('map').setView([52.40842, 10.180], 12);
 
           L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -86,8 +140,14 @@
                   map.panTo(markers[name].getLatLng());
           }
               
-      </script>
+        </script>
 
+      
+        <h2>Aufruf</h2>
+        Vor diesem Hintergrund würde ich mich freuen, wenn jeder einmal in die <a href="anleitung.html">Karte schaut und nach Fehlern sucht</a>. So bekommen wir eine sehr gute Karte mit allen Informationen von unserem Dorf. Und vielleicht erleichtern wir damit dem Ortsrat am 30. Mai die Entscheidung, sich für unsere Karte als Dorftafel zu entscheiden, statt einer teuren kommerziellen Karte.<br>
+        <br>
+        Einen Flyer als Aushang befindet sich <a href="OSM_Aufruf.pdf">hier</a>.
+      
       </div>
 
     </div> <!-- /container -->
