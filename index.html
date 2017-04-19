@@ -18,6 +18,27 @@
     <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
 
 
+    
+
+    <!-- Piwik -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      // tracker methods like "setCustomDimension" should be called before "trackPageView"
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//piwik.klomp.eu/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', '8']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <!-- End Piwik Code -->
+
+
+    
+    
   </head>
 
   <body>
@@ -57,7 +78,7 @@
         <br>
         <h2>Warum OpenStreetMap?</h2>
         
-        <b>Aktuell und Detailreich</b><br>
+        <b>Aktuell und detailreich</b><br>
         Ein wesentlicher Vorteil bei der Nutzung von OpenStreetMap liegt für Dollbergen in der Aktualität: <b>Wer kennt Dollbergen besser als wir Einwohner?</b><br>
 
         <figure class="figure" style="max-width: 400px; margin-left: auto; margin-right: auto; margin-bottom: 1em;">
@@ -75,11 +96,12 @@
         <br>
         
         <b>Neue Anwendungsfälle</b><br>
-        Außerdem eröffnen die freien Kartendaten ganz neue Anwendungsfälle, wie hier die beispielhafte Darstellung des Dorferlebnispfad Dollbergen:
+        Außerdem eröffnen die freien Kartendaten ganz neue Anwendungsfälle, wie hier die beispielhafte Darstellung einer interaktiven Karte der Stationen des Dorferlebnispfad Dollbergen. Wird ein Marker ausgewählt, kann man weitere Informationen dieser Station erhalten.
       
         <figure class="figure" style="max-width: 600px; margin-left: auto; margin-right: auto; margin-bottom: 1em;">
           <div style="width:100%; height: 300px;" id='map'></div>
           <figcaption class="figure-caption text-center">
+            Über folgende Buttons kann man direkt zu einer Station springen.<br>
             <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T00'); return false">Tafel 0</button> 
             <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T01'); return false">Tafel 1</button> 
             <button type="button" class="btn btn-sm btn-default" onclick="focusMarker('T02'); return false">Tafel 2</button> 
